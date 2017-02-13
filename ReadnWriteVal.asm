@@ -11,13 +11,13 @@ getString MACRO address_string, lengthOfString
 	
 	.code
 	
-	push	edx
-	push	ecx
+	push		edx
+	push		ecx
 	mov	  	edx, OFFSET promptRules
-	call	WriteString
+	call		WriteString
 	mov	  	edx, address_string ; points to the input buffer
 	mov	  	ecx, lengthOfString ; max number of non-null chars to read
-	call	ReadString
+	call		ReadString
 	pop	  	ecx
 	pop	  	edx
 	
@@ -28,9 +28,9 @@ ENDM
 ;-------------------------------------------------------------------------
 displayString MACRO address_string
 
-	push	edx
+	push		edx
 	mov	  	edx, OFFSET address_string
-	call	WriteString
+	call		WriteString
 	pop	  	edx
 	
 ENDM
@@ -139,8 +139,8 @@ introduction ENDP
 ;-------------------------------------------------------------------
 
 
-; readVal should invoke the getString macro to get the user’s string of digits. 
-; It should then convert the digit string to numeric, while validating the user’s input.
+; readVal should invoke the getString macro to get the userâ€™s string of digits. 
+; It should then convert the digit string to numeric, while validating the userâ€™s input.
 
 readVal	PROC
 
